@@ -1,0 +1,2412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcus Vane — Founder · Investor · Operator</title>
+    <meta name="description" content="Founder, Investor, and Operator portfolio — conviction before consensus." />
+    <meta property="og:title" content="Marcus Vane — Founder · Investor · Operator" />
+    <meta property="og:description" content="Founder, Investor, and Operator portfolio — conviction before consensus." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Anton (Display) and Onest (Body/Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Onest:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Lenis Importmap -->
+    <script type="importmap">
+    {
+      "imports": {
+        "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.3.19/dist/lenis.mjs"
+      }
+    }
+    </script>
+
+    <style>
+      /* --- Root Tokens & Reset --- */
+      :root {
+        --background: #08080a;
+        --foreground: #f3f1ea;
+        --surface: #111114;
+        --surface-2: #17171b;
+        --muted: #807f78;
+        --line: rgba(243, 241, 234, 0.1);
+        --line-strong: rgba(243, 241, 234, 0.22);
+        --accent: #ff3b1d;
+        --accent-2: #ff6a3d;
+        --gutter: 2.5rem;
+        --section: 9rem;
+        --font-display: "Anton", sans-serif;
+        --font-sans: "Onest", sans-serif;
+      }
+
+      *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      img, video {
+        display: block;
+        max-width: 100%;
+      }
+
+      ul, ol {
+        list-style: none;
+      }
+
+      button, a {
+        font-family: inherit;
+        color: inherit;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Rem-based adaptive grid */
+      html {
+        font-size: 16px;
+        background: #08080a;
+      }
+      @media (max-width: 1920px) {
+        html { font-size: 0.833333vw; } /* 16*100/1920 */
+      }
+      @media (max-width: 1440px) {
+        html { font-size: 1.111111vw; } /* 16*100/1440 */
+      }
+      @media (max-width: 1024px) {
+        html { font-size: 1.5625vw; }   /* 16*100/1024 */
+      }
+      @media (max-width: 640px) {
+        html {
+          font-size: 4.444444vw; /* 16*100/360 */
+        }
+        :root {
+          --gutter: 16px;
+        }
+      }
+
+      body {
+        background: #08080a;
+        color: #f3f1ea;
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+      }
+
+      body.preloader-locked {
+        overflow: hidden !important;
+      }
+
+      ::selection {
+        background: #ff3b1d;
+        color: #08080a;
+      }
+
+      /* Lenis Recommended CSS */
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
+
+      /* Typography Scale (all in rem with line-heights) */
+      .font-display { font-family: var(--font-display); }
+      .font-sans { font-family: var(--font-sans); }
+
+      .text-hero {
+        font-family: var(--font-display);
+        font-size: 13rem;
+        line-height: 0.86;
+        letter-spacing: -0.01em;
+      }
+      @media (min-width: 640px) {
+        .text-hero {
+          font-size: 28rem;
+          line-height: 0.78;
+        }
+      }
+
+      .text-mega {
+        font-family: var(--font-display);
+        font-size: 13rem;
+        line-height: 0.86;
+        letter-spacing: -0.01em;
+      }
+
+      .text-display {
+        font-family: var(--font-display);
+        font-size: 7.5rem;
+        line-height: 0.9;
+        letter-spacing: -0.01em;
+      }
+
+      .text-h1 {
+        font-family: var(--font-display);
+        font-size: 3.25rem;
+        line-height: 1;
+        letter-spacing: -0.01em;
+      }
+      @media (min-width: 640px) {
+        .text-h1 {
+          font-size: 5rem;
+          line-height: 0.95;
+        }
+      }
+
+      .text-h2 {
+        font-family: var(--font-display);
+        font-size: 3.25rem;
+        line-height: 1;
+        letter-spacing: -0.01em;
+      }
+
+      .text-h3 {
+        font-size: 1.75rem;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+
+      .text-lead {
+        font-size: 1.375rem;
+        line-height: 1.45;
+      }
+
+      .text-body {
+        font-size: 1.0625rem;
+        line-height: 1.6;
+      }
+
+      .text-eyebrow {
+        font-size: 0.8125rem;
+        line-height: 1.2;
+      }
+
+      /* Eyebrow reusable component */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+      }
+      .eyebrow-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* --- 1) Preloader --- */
+      #preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: var(--background);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: var(--gutter);
+        gap: 0.75rem;
+        transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform;
+      }
+      @media (min-width: 640px) {
+        #preloader {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-end;
+          gap: 1rem;
+        }
+      }
+      .preloader-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -10;
+        background: var(--background);
+      }
+      .preloader-brand {
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+        transition: opacity 300ms ease-out;
+      }
+      .preloader-counter {
+        font-family: var(--font-display);
+        font-size: 7.5rem;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+        color: var(--foreground);
+        transition: opacity 300ms ease-out;
+      }
+      .preloader-counter span.percent {
+        color: var(--accent);
+      }
+
+      /* --- 2) SiteNav (fixed top) --- */
+      .site-header {
+        position: fixed;
+        inset-inline: 0;
+        top: 0;
+        z-index: 50;
+        pointer-events: none;
+      }
+      .site-nav {
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem var(--gutter);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .nav-monogram {
+        display: grid;
+        place-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 9999px;
+        border: 1px solid var(--line-strong);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+        font-size: 0.875rem;
+        transition: border-color 0.2s ease;
+      }
+      .nav-logo:hover .nav-monogram {
+        border-color: var(--accent);
+      }
+      .nav-brand-name {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+        display: none;
+      }
+      @media (min-width: 640px) {
+        .nav-brand-name {
+          display: inline;
+        }
+      }
+      .nav-links-desktop {
+        display: none;
+        align-items: center;
+        gap: 2.5rem;
+      }
+      @media (min-width: 768px) {
+        .nav-links-desktop {
+          display: flex;
+        }
+      }
+      .nav-link {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        position: relative;
+        padding: 0.25rem 0;
+        transition: color 0.25s ease;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -0.25rem;
+        left: 0;
+        height: 1px;
+        background: var(--accent);
+        width: 0;
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-link:hover {
+        color: var(--foreground);
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Burger & Mobile Menu */
+      .burger-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.375rem;
+        cursor: pointer;
+        z-index: 60;
+        background: transparent;
+        border: none;
+      }
+      @media (min-width: 768px) {
+        .burger-btn {
+          display: none;
+        }
+      }
+      .burger-bar {
+        height: 0.125rem;
+        width: 1.5rem;
+        background: var(--foreground);
+        border-radius: 1px;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+      }
+      .burger-btn.is-active .burger-bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+      }
+      .burger-btn.is-active .burger-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .burger-btn.is-active .burger-bar:nth-child(3) {
+        transform: translateY(-0.5rem) rotate(-45deg);
+      }
+
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 55;
+        background: var(--background);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-inline: var(--gutter);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 450ms ease-out;
+      }
+      .mobile-menu.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .mobile-menu-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+      }
+      .mobile-menu-link {
+        font-family: var(--font-display);
+        font-size: 3.25rem;
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+        transform: translateY(48px);
+        opacity: 0;
+        transition: transform 420ms ease-out, opacity 420ms ease-out, color 0.2s ease;
+      }
+      .mobile-menu.is-open .mobile-menu-link {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .mobile-menu-link:hover {
+        color: var(--accent);
+      }
+
+      /* --- Main Container --- */
+      main {
+        position: relative;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* --- 3) Hero Section --- */
+      .hero-section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+        overflow: hidden;
+        background: var(--background);
+      }
+      .hero-top-row {
+        position: relative;
+        z-index: 30;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 7rem var(--gutter) 0;
+      }
+      @media (min-width: 640px) {
+        .hero-top-row {
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 8rem var(--gutter) 0;
+        }
+      }
+      .hero-roles {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+        font-size: 1.75rem;
+      }
+      @media (min-width: 640px) {
+        .hero-roles {
+          font-size: 3.25rem;
+        }
+      }
+      .hero-role-line {
+        display: block;
+        overflow: hidden;
+      }
+      .hero-role-inner {
+        display: block;
+        transform: translateY(110%);
+        opacity: 0;
+        transition: transform 760ms cubic-bezier(0.16, 1, 0.3, 1), opacity 760ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .hero-roles.is-revealed .hero-role-inner {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .hero-desc {
+        max-width: 26rem;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        color: var(--muted);
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1), transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @media (min-width: 640px) {
+        .hero-desc {
+          text-align: right;
+        }
+      }
+      .hero-desc.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hero Portrait & Giant Name */
+      .hero-portrait-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 86vh;
+        width: 80vw;
+        z-index: 20;
+        pointer-events: none;
+      }
+      @media (min-width: 640px) {
+        .hero-portrait-wrapper {
+          width: 48vw;
+        }
+      }
+      @media (min-width: 1024px) {
+        .hero-portrait-wrapper {
+          width: 36vw;
+        }
+      }
+
+      .hero-portrait-figure {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: auto;
+      }
+      .hero-portrait-media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .hero-gradient-base {
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        z-index: 20;
+        height: 26vh;
+        background: linear-gradient(to bottom, transparent, #08080a);
+        pointer-events: none;
+      }
+
+      .hero-name-title {
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        transform: translateY(6%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 0.78;
+        letter-spacing: -0.01em;
+        color: var(--accent);
+        font-size: 13rem;
+        pointer-events: none;
+        user-select: none;
+      }
+      @media (min-width: 640px) {
+        .hero-name-title {
+          font-size: 28rem;
+        }
+      }
+      .hero-name-line {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .hero-char-wrap {
+        display: inline-block;
+        overflow: hidden;
+      }
+      .hero-char {
+        display: inline-block;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), opacity 900ms cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, opacity;
+      }
+      .hero-char.is-revealed {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .hero-scroll-cue {
+        position: absolute;
+        bottom: 2rem;
+        left: var(--gutter);
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 500ms ease, transform 500ms ease;
+      }
+      .hero-scroll-cue.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .hero-scroll-rule {
+        width: 2.5rem;
+        height: 1px;
+        background: var(--accent);
+        display: inline-block;
+      }
+
+      /* --- 4) Marquee Section --- */
+      .marquee-section {
+        overflow: hidden;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background: var(--background);
+        position: relative;
+        z-index: 25;
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        flex-wrap: nowrap;
+        animation: marquee 22s linear infinite;
+        will-change: transform;
+      }
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .marquee-group {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .marquee-word {
+        font-family: var(--font-display);
+        font-size: 3.25rem;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+        white-space: nowrap;
+      }
+      .marquee-dot {
+        margin-inline: 2rem;
+        width: 0.625rem;
+        height: 0.625rem;
+        border-radius: 9999px;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* --- Section Standard Padding --- */
+      .section-padded {
+        padding: var(--section) var(--gutter);
+      }
+
+      /* Heading line reveal wrappers */
+      .line-reveal-wrap {
+        display: block;
+        overflow: hidden;
+      }
+      .line-reveal-inner {
+        display: block;
+        transform: translateY(110%);
+        opacity: 0;
+        transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), opacity 900ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .in-view .line-reveal-inner,
+      .line-reveal-inner.is-revealed {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Block fade/slide up */
+      .block-reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 560ms cubic-bezier(0.16, 1, 0.3, 1), transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .block-reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* --- 5) Story Section --- */
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      @media (min-width: 1024px) {
+        .story-grid {
+          grid-template-columns: repeat(12, 1fr);
+          gap: var(--gutter);
+        }
+      }
+      .story-left {
+        grid-column: span 1;
+      }
+      @media (min-width: 1024px) {
+        .story-left {
+          grid-column: span 6;
+        }
+      }
+      .story-heading {
+        margin-top: 1.5rem;
+        max-width: 16ch;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 0.95;
+        letter-spacing: -0.01em;
+        font-size: 3.25rem;
+        color: var(--foreground);
+      }
+      @media (min-width: 640px) {
+        .story-heading {
+          font-size: 5rem;
+        }
+      }
+      .story-lead {
+        margin-top: 2rem;
+        max-width: 46ch;
+        font-size: 1.375rem;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+
+      .story-right {
+        grid-column: span 1;
+      }
+      @media (min-width: 1024px) {
+        .story-right {
+          grid-column: span 6;
+          padding-top: 0.5rem;
+        }
+      }
+      .principles-list {
+        display: flex;
+        flex-direction: column;
+      }
+      .principle-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1.5rem;
+        border-top: 1px solid var(--line);
+        padding: 2rem 0;
+      }
+      .principle-item:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .principle-num {
+        font-family: var(--font-sans);
+        font-size: 1.75rem;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        color: var(--accent);
+      }
+      .principle-title {
+        font-family: var(--font-sans);
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+      }
+      .principle-desc {
+        margin-top: 0.75rem;
+        max-width: 44ch;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      /* --- 6) Ventures Section --- */
+      .ventures-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      @media (min-width: 640px) {
+        .ventures-header {
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+        }
+      }
+      .ventures-title {
+        margin-top: 1.5rem;
+        max-width: 14ch;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 0.95;
+        letter-spacing: -0.01em;
+        font-size: 3.25rem;
+        color: var(--foreground);
+      }
+      @media (min-width: 640px) {
+        .ventures-title {
+          font-size: 5rem;
+        }
+      }
+      .ventures-count {
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+      }
+
+      .ventures-grid {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+      }
+      @media (min-width: 768px) {
+        .ventures-grid {
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: var(--gutter);
+          row-gap: 4rem;
+        }
+        .venture-card:nth-child(even) {
+          margin-top: 6rem;
+        }
+      }
+      .venture-card {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1), transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .venture-card.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .venture-article {
+        position: relative;
+      }
+      .venture-info-row {
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--line);
+        padding-top: 1.25rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+      .venture-name {
+        font-family: var(--font-sans);
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+        transition: color 340ms ease-out;
+      }
+      .venture-card:hover .venture-name {
+        color: var(--accent);
+      }
+      .venture-blurb {
+        margin-top: 0.5rem;
+        max-width: 42ch;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .venture-meta-right {
+        flex-shrink: 0;
+        text-align: right;
+      }
+      .venture-year {
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+      .venture-outcome {
+        margin-top: 0.5rem;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+      }
+      .venture-category {
+        margin-top: 0.75rem;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+      }
+
+      /* --- 7) Impact Section --- */
+      .impact-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .impact-title {
+        margin-top: 1.5rem;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        font-size: 3.25rem;
+        color: var(--foreground);
+      }
+      .impact-list {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        border-top: 1px solid var(--line);
+      }
+      @media (min-width: 640px) {
+        .impact-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .impact-list {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .impact-cell {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border-bottom: 1px solid var(--line);
+        padding: 2.5rem 0;
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 560ms cubic-bezier(0.16, 1, 0.3, 1), transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @media (min-width: 1024px) {
+        .impact-cell {
+          padding: 3rem 0;
+        }
+      }
+      .impact-cell.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Divider rules */
+      @media (min-width: 640px) and (max-width: 1023px) {
+        .impact-cell:nth-child(2n) {
+          border-left: 1px solid var(--line);
+          padding-left: 2rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .impact-cell:not(:nth-child(4n+1)) {
+          border-left: 1px solid var(--line);
+          padding-left: 2rem;
+        }
+      }
+
+      .impact-figure {
+        font-family: var(--font-display);
+        font-size: 7.5rem;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+        cursor: default;
+        transition: color 340ms ease-out;
+      }
+      .impact-figure:hover {
+        color: var(--accent);
+      }
+      .impact-label {
+        max-width: 20ch;
+        font-size: 1.0625rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+      }
+
+      /* --- 8) Voices Section --- */
+      .voices-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .voices-title {
+        margin-top: 1.5rem;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        font-size: 3.25rem;
+        color: var(--foreground);
+      }
+      .voices-body {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      @media (min-width: 1024px) {
+        .voices-body {
+          grid-template-columns: repeat(12, 1fr);
+          gap: var(--gutter);
+          align-items: start;
+        }
+      }
+
+      .voices-selector {
+        grid-column: span 1;
+      }
+      @media (min-width: 1024px) {
+        .voices-selector {
+          grid-column: span 5;
+        }
+      }
+
+      .voice-tab {
+        display: flex;
+        align-items: baseline;
+        gap: 1.25rem;
+        border-top: 1px solid var(--line);
+        padding: 1.75rem 0;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+        background: transparent;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+      }
+      .voice-tab:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .voice-tab-num {
+        font-size: 0.8125rem;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        transition: color 0.2s ease;
+      }
+      .voice-tab.is-active .voice-tab-num {
+        color: var(--accent);
+      }
+      .voice-tab-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .voice-tab-name {
+        font-family: var(--font-sans);
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--muted);
+        transition: color 0.2s ease;
+      }
+      .voice-tab.is-active .voice-tab-name {
+        color: var(--foreground);
+      }
+      .voice-tab-role {
+        margin-top: 0.25rem;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+      .voice-tab-rule {
+        margin-left: auto;
+        height: 1px;
+        background: var(--accent);
+        width: 0;
+        align-self: center;
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .voice-tab.is-active .voice-tab-rule {
+        width: 2.5rem;
+      }
+
+      .voices-featured {
+        grid-column: span 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      @media (min-width: 640px) {
+        .voices-featured {
+          grid-template-columns: 1fr auto;
+          align-items: flex-start;
+          gap: 3rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .voices-featured {
+          grid-column: span 7;
+        }
+      }
+
+      .voice-quote-col {
+        order: 2;
+      }
+      @media (min-width: 640px) {
+        .voice-quote-col {
+          order: 1;
+        }
+      }
+      .voice-quote-text {
+        max-width: 30ch;
+        font-family: var(--font-sans);
+        font-size: 1.75rem;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+      }
+      .voice-word {
+        display: inline-block;
+        transform: translateY(18px);
+        opacity: 0;
+        transition: transform 520ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 520ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .voice-word.is-revealed {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .voice-footer {
+        margin-top: 2rem;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+
+      .voice-portrait-col {
+        order: 1;
+        width: 100%;
+      }
+      @media (min-width: 640px) {
+        .voice-portrait-col {
+          order: 2;
+          width: 16rem;
+          flex-shrink: 0;
+        }
+      }
+      .voice-portrait-figure {
+        aspect-ratio: 4/5;
+        width: 100%;
+        border-radius: 0.125rem;
+        opacity: 0;
+        transform: scale(1.06);
+        transition: opacity 640ms cubic-bezier(0.16, 1, 0.3, 1), transform 640ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .voice-portrait-figure.in-view {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* --- 9) ContactFooter --- */
+      .contact-footer {
+        padding-top: var(--section);
+        padding-inline: var(--gutter);
+        padding-bottom: 0;
+        background: var(--background);
+      }
+      .contact-title {
+        margin-top: 1.5rem;
+        max-width: 18ch;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 0.95;
+        letter-spacing: -0.01em;
+        font-size: 3.25rem;
+        color: var(--foreground);
+      }
+      @media (min-width: 640px) {
+        .contact-title {
+          font-size: 5rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .contact-title {
+          font-size: 7.5rem;
+        }
+      }
+      .contact-lead {
+        margin-top: 2rem;
+        max-width: 44ch;
+        font-size: 1.375rem;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+
+      .contact-email-link {
+        margin-top: 3rem;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        font-family: var(--font-sans);
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        word-break: break-all;
+        color: var(--foreground);
+        transition: transform 340ms ease-out, color 340ms ease-out;
+      }
+      @media (min-width: 640px) {
+        .contact-email-link {
+          gap: 1rem;
+          font-size: 5rem;
+        }
+      }
+      .contact-email-link:hover {
+        transform: translateX(14px);
+        color: var(--accent);
+      }
+      .contact-email-arrow {
+        color: var(--accent);
+        font-weight: 400;
+        display: inline-block;
+        transition: transform 340ms ease-out;
+      }
+      .contact-email-link:hover .contact-email-arrow {
+        transform: translate(4px, -4px);
+      }
+
+      .footer-bar {
+        margin-top: var(--section);
+        border-top: 1px solid var(--line);
+        padding: 3rem 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      @media (min-width: 1024px) {
+        .footer-bar {
+          grid-template-columns: repeat(12, 1fr);
+          align-items: start;
+        }
+      }
+      .footer-signature-col {
+        grid-column: span 1;
+      }
+      @media (min-width: 1024px) {
+        .footer-signature-col {
+          grid-column: span 6;
+        }
+      }
+      .footer-signature {
+        font-family: var(--font-display);
+        font-size: 3.25rem;
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        color: var(--foreground);
+      }
+      .footer-subtag {
+        margin-top: 1rem;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+      }
+
+      .footer-social-col {
+        grid-column: span 1;
+      }
+      @media (min-width: 1024px) {
+        .footer-social-col {
+          grid-column: span 3;
+        }
+      }
+      .footer-social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .footer-social-link {
+        font-size: 1.0625rem;
+        color: var(--muted);
+        display: inline-flex;
+        align-items: center;
+        transition: color 0.2s ease;
+      }
+      .social-accent-rule {
+        width: 0;
+        height: 1px;
+        background: var(--accent);
+        margin-right: 0;
+        display: inline-block;
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), margin-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .footer-social-link:hover {
+        color: var(--foreground);
+      }
+      .footer-social-link:hover .social-accent-rule {
+        width: 1.5rem;
+        margin-right: 0.5rem;
+      }
+
+      .footer-copy-col {
+        grid-column: span 1;
+      }
+      @media (min-width: 1024px) {
+        .footer-copy-col {
+          grid-column: span 3;
+          text-align: right;
+        }
+      }
+      .footer-copy {
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+
+      /* --- LiquidImage Component Styles --- */
+      .liquid-figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.125rem;
+        background: var(--surface);
+      }
+      .liquid-figure.bare-mode {
+        background: transparent;
+      }
+      .liquid-aspect-16-11 {
+        aspect-ratio: 16/11;
+        width: 100%;
+      }
+      .liquid-aspect-4-5 {
+        aspect-ratio: 4/5;
+        width: 100%;
+      }
+
+      .liquid-placeholder-bg {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(130% 130% at 30% 15%, var(--surface-2), var(--background));
+        z-index: 1;
+      }
+
+      .liquid-media-el {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 2;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Grayscale Veil */
+      .liquid-veil {
+        position: absolute;
+        inset: 0;
+        background: var(--background);
+        mix-blend-mode: color;
+        opacity: 0.88;
+        transition: opacity 380ms ease-out;
+        z-index: 3;
+        pointer-events: none;
+      }
+      .liquid-figure:hover .liquid-veil {
+        opacity: 0;
+      }
+
+      /* Accent Glow Sweep */
+      .liquid-glow {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 30%, color-mix(in srgb, var(--accent) 35%, transparent) 50%, transparent 70%);
+        opacity: 0;
+        transition: opacity 340ms ease-out;
+        z-index: 4;
+        pointer-events: none;
+      }
+      .liquid-figure:hover .liquid-glow {
+        opacity: 1;
+      }
+
+      /* Persistent Radial Vignette */
+      .liquid-vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(120% 120% at 50% 120%, color-mix(in srgb, #08080a 70%, transparent), transparent 60%);
+        z-index: 5;
+        pointer-events: none;
+      }
+
+      /* --- Reduced Motion Accessibility --- */
+      @media (prefers-reduced-motion: reduce) {
+        #preloader {
+          display: none !important;
+        }
+        .marquee-track {
+          animation: none !important;
+        }
+        .hero-char, .hero-role-inner, .hero-desc, .hero-scroll-cue,
+        .line-reveal-inner, .block-reveal, .venture-card, .impact-cell,
+        .voice-word, .voice-portrait-figure, .mobile-menu-link {
+          transform: none !important;
+          opacity: 1 !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1) Preloader -->
+    <div id="preloader" role="status" aria-live="polite">
+      <div class="preloader-bg"></div>
+      <div class="preloader-brand" id="preloader-brand">Marcus Vane</div>
+      <div class="preloader-counter" id="preloader-counter">
+        <span id="preloader-num">0</span><span class="percent">%</span>
+      </div>
+    </div>
+
+    <!-- 2) SiteNav (fixed top) -->
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main Navigation">
+        <!-- Logo (left) -->
+        <a href="#top" class="nav-logo" id="nav-logo-link">
+          <div class="nav-monogram">MV</div>
+          <span class="nav-brand-name">Marcus Vane</span>
+        </a>
+
+        <!-- Desktop Links (>=md) -->
+        <ul class="nav-links-desktop">
+          <li><a href="#story" class="nav-link">Story</a></li>
+          <li><a href="#ventures" class="nav-link">Ventures</a></li>
+          <li><a href="#impact" class="nav-link">Impact</a></li>
+          <li><a href="#voices" class="nav-link">Voices</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Burger button (<md) -->
+        <button class="burger-btn" id="burger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Panel (<md) -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-menu-links">
+        <li><a href="#story" class="mobile-menu-link">Story</a></li>
+        <li><a href="#ventures" class="mobile-menu-link">Ventures</a></li>
+        <li><a href="#impact" class="mobile-menu-link">Impact</a></li>
+        <li><a href="#voices" class="mobile-menu-link">Voices</a></li>
+        <li><a href="#contact" class="mobile-menu-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- 3) Hero Section -->
+      <section id="top" class="hero-section">
+        <!-- Top row: Roles on left, Description on right -->
+        <div class="hero-top-row">
+          <h2 class="hero-roles" id="hero-roles" aria-label="Founder, Investor, Operator, Contrarian">
+            <span class="hero-role-line"><span class="hero-role-inner">Founder</span></span>
+            <span class="hero-role-line"><span class="hero-role-inner">Investor</span></span>
+            <span class="hero-role-line"><span class="hero-role-inner">Operator</span></span>
+            <span class="hero-role-line"><span class="hero-role-inner">Contrarian</span></span>
+          </h2>
+          <p class="hero-desc" id="hero-desc">
+            I start companies that shouldn't be possible — then make them inevitable. Four exits, one playbook: conviction before consensus.
+          </p>
+        </div>
+
+        <!-- Giant Surname H1 (behind portrait) -->
+        <h1 class="hero-name-title" aria-label="Marcus Vane">
+          <span class="hero-name-line" id="hero-name-line-1">
+            <span class="hero-char-wrap"><span class="hero-char">M</span></span><span class="hero-char-wrap"><span class="hero-char">a</span></span><span class="hero-char-wrap"><span class="hero-char">r</span></span><span class="hero-char-wrap"><span class="hero-char">c</span></span><span class="hero-char-wrap"><span class="hero-char">u</span></span><span class="hero-char-wrap"><span class="hero-char">s</span></span>
+          </span>
+          <span class="hero-name-line" id="hero-name-line-2">
+            <span class="hero-char-wrap"><span class="hero-char">V</span></span><span class="hero-char-wrap"><span class="hero-char">a</span></span><span class="hero-char-wrap"><span class="hero-char">n</span></span><span class="hero-char-wrap"><span class="hero-char">e</span></span>
+          </span>
+        </h1>
+
+        <!-- Portrait Column (in front of name) -->
+        <div class="hero-portrait-wrapper">
+          <figure role="img" class="hero-portrait-figure liquid-figure bare-mode" id="hero-liquid-fig" data-max-scale="30">
+            <!-- Inline SVG filter for liquid displacement -->
+            <svg width="0" height="0" style="position:absolute;pointer-events:none;">
+              <filter id="liquid-filter-hero">
+                <feTurbulence id="turb-hero" type="fractalNoise" baseFrequency="0.009" numOctaves="2" result="noise"></feTurbulence>
+                <feDisplacementMap id="disp-hero" in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+              </filter>
+            </svg>
+            <!-- Hero Portrait Video (Native Transparent WebM with Alpha Channel) -->
+            <video
+              id="hero-portrait-video"
+              class="hero-portrait-media"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              poster="/assets/aistudio/Man_1_poster.webp"
+              style="filter: url(#liquid-filter-hero);"
+            >
+              <source src="/assets/aistudio/Man_1_no_bg.webm" type="video/webm; codecs=vp9" />
+              <source src="/assets/aistudio/Man_1_transparent.webm" type="video/webm; codecs=vp9" />
+              <source src="/assets/aistudio/Man_1.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </div>
+
+        <!-- Gradient base layer to melt portrait base + name into page -->
+        <div class="hero-gradient-base"></div>
+
+        <!-- Scroll Cue -->
+        <div class="hero-scroll-cue" id="hero-scroll-cue">
+          <span class="hero-scroll-rule"></span>
+          <span>Scroll to enter</span>
+        </div>
+      </section>
+
+      <!-- 4) Marquee Section -->
+      <section class="marquee-section" aria-label="Operating principles">
+        <div class="marquee-track">
+          <!-- First set of principles -->
+          <div class="marquee-group">
+            <span class="marquee-word">Build Bold</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Scale Relentlessly</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Think In Decades</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Bet On People</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Ship The Future</span>
+            <span class="marquee-dot"></span>
+          </div>
+          <!-- Second duplicated set for seamless loop -->
+          <div class="marquee-group" aria-hidden="true">
+            <span class="marquee-word">Build Bold</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Scale Relentlessly</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Think In Decades</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Bet On People</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-word">Ship The Future</span>
+            <span class="marquee-dot"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5) Story Section -->
+      <section id="story" class="section-padded">
+        <div class="story-grid">
+          <!-- Left Col -->
+          <div class="story-left">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              <span>The Story</span>
+            </div>
+            <h2 class="story-heading">
+              <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">Conviction is a</span></span>
+              <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">competitive advantage.</span></span>
+            </h2>
+            <p class="story-lead block-reveal scroll-block">
+              For twenty years I've backed the version of the future most people couldn't see yet. From a dorm-room prototype to companies serving a hundred million people, the through-line never changed: find the hard problem everyone avoids, assemble the team nobody else could, and out-stubborn the doubt.
+            </p>
+          </div>
+
+          <!-- Right Col: Principles -->
+          <div class="story-right">
+            <ul class="principles-list">
+              <li class="principle-item block-reveal scroll-block" style="--stagger-index: 0;">
+                <span class="principle-num">01</span>
+                <div>
+                  <h3 class="principle-title">Move before it's obvious</h3>
+                  <p class="principle-desc">The best opportunities look like mistakes right up until they look inevitable. I commit while the room is still hesitating.</p>
+                </div>
+              </li>
+              <li class="principle-item block-reveal scroll-block" style="--stagger-index: 1;">
+                <span class="principle-num">02</span>
+                <div>
+                  <h3 class="principle-title">Hire founders, not employees</h3>
+                  <p class="principle-desc">I build teams of people who would start their own thing — then give them a reason not to. Ownership compounds faster than talent alone.</p>
+                </div>
+              </li>
+              <li class="principle-item block-reveal scroll-block" style="--stagger-index: 2;">
+                <span class="principle-num">03</span>
+                <div>
+                  <h3 class="principle-title">Distribution is the product</h3>
+                  <p class="principle-desc">Genius unshipped is a hobby. Every venture is engineered around how it reaches the people it was built for.</p>
+                </div>
+              </li>
+              <li class="principle-item block-reveal scroll-block" style="--stagger-index: 3;">
+                <span class="principle-num">04</span>
+                <div>
+                  <h3 class="principle-title">Play the long game loudly</h3>
+                  <p class="principle-desc">Patience and ambition are not opposites. I think in decades and act with urgency every single day.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6) Ventures Section -->
+      <section id="ventures" class="section-padded">
+        <!-- Header Row -->
+        <div class="ventures-header">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              <span>Selected Ventures</span>
+            </div>
+            <h2 class="ventures-title">
+              <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">The work that</span></span>
+              <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">moved markets.</span></span>
+            </h2>
+          </div>
+          <span class="ventures-count">04 / Companies</span>
+        </div>
+
+        <!-- 2-col Ventures Grid -->
+        <ul class="ventures-grid">
+          <!-- Venture 1 -->
+          <li class="venture-card scroll-block" style="--stagger-index: 0;">
+            <article class="venture-article">
+              <figure role="img" class="liquid-figure liquid-aspect-16-11" data-max-scale="28">
+                <div class="liquid-placeholder-bg"></div>
+                <svg width="0" height="0" style="position:absolute;pointer-events:none;">
+                  <filter id="liquid-filter-v1">
+                    <feTurbulence id="turb-v1" type="fractalNoise" baseFrequency="0.009" numOctaves="2" result="noise"></feTurbulence>
+                    <feDisplacementMap id="disp-v1" in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+                  </filter>
+                </svg>
+                <img
+                  src="https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/ventures/venture-01.webp"
+                  alt="Helix Robotics"
+                  loading="lazy"
+                  class="liquid-media-el"
+                  style="filter: url(#liquid-filter-v1);"
+                />
+                <div class="liquid-veil"></div>
+                <div class="liquid-glow"></div>
+                <div class="liquid-vignette"></div>
+              </figure>
+
+              <div class="venture-info-row">
+                <div>
+                  <h3 class="venture-name">Helix Robotics</h3>
+                  <p class="venture-blurb">Reinvented warehouse logistics with autonomous fleets now running in 40 countries.</p>
+                </div>
+                <div class="venture-meta-right">
+                  <div class="venture-year">2019</div>
+                  <div class="venture-outcome">Acquired — $1.1B</div>
+                </div>
+              </div>
+              <div class="venture-category">Industrial Automation</div>
+            </article>
+          </li>
+
+          <!-- Venture 2 (Offset down) -->
+          <li class="venture-card scroll-block" style="--stagger-index: 1;">
+            <article class="venture-article">
+              <figure role="img" class="liquid-figure liquid-aspect-16-11" data-max-scale="28">
+                <div class="liquid-placeholder-bg"></div>
+                <svg width="0" height="0" style="position:absolute;pointer-events:none;">
+                  <filter id="liquid-filter-v2">
+                    <feTurbulence id="turb-v2" type="fractalNoise" baseFrequency="0.009" numOctaves="2" result="noise"></feTurbulence>
+                    <feDisplacementMap id="disp-v2" in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+                  </filter>
+                </svg>
+                <img
+                  src="https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/ventures/venture-02.webp"
+                  alt="Northwind Energy"
+                  loading="lazy"
+                  class="liquid-media-el"
+                  style="filter: url(#liquid-filter-v2);"
+                />
+                <div class="liquid-veil"></div>
+                <div class="liquid-glow"></div>
+                <div class="liquid-vignette"></div>
+              </figure>
+
+              <div class="venture-info-row">
+                <div>
+                  <h3 class="venture-name">Northwind Energy</h3>
+                  <p class="venture-blurb">Brought utility-scale storage to the grid years before the market believed it was viable.</p>
+                </div>
+                <div class="venture-meta-right">
+                  <div class="venture-year">2015</div>
+                  <div class="venture-outcome">IPO — NYSE: NWND</div>
+                </div>
+              </div>
+              <div class="venture-category">Climate Infrastructure</div>
+            </article>
+          </li>
+
+          <!-- Venture 3 -->
+          <li class="venture-card scroll-block" style="--stagger-index: 2;">
+            <article class="venture-article">
+              <figure role="img" class="liquid-figure liquid-aspect-16-11" data-max-scale="28">
+                <div class="liquid-placeholder-bg"></div>
+                <svg width="0" height="0" style="position:absolute;pointer-events:none;">
+                  <filter id="liquid-filter-v3">
+                    <feTurbulence id="turb-v3" type="fractalNoise" baseFrequency="0.009" numOctaves="2" result="noise"></feTurbulence>
+                    <feDisplacementMap id="disp-v3" in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+                  </filter>
+                </svg>
+                <img
+                  src="https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/ventures/venture-03.webp"
+                  alt="Cadence Health"
+                  loading="lazy"
+                  class="liquid-media-el"
+                  style="filter: url(#liquid-filter-v3);"
+                />
+                <div class="liquid-veil"></div>
+                <div class="liquid-glow"></div>
+                <div class="liquid-vignette"></div>
+              </figure>
+
+              <div class="venture-info-row">
+                <div>
+                  <h3 class="venture-name">Cadence Health</h3>
+                  <p class="venture-blurb">Put a clinician in every pocket and rewired how chronic care gets delivered.</p>
+                </div>
+                <div class="venture-meta-right">
+                  <div class="venture-year">2011</div>
+                  <div class="venture-outcome">Acquired — $640M</div>
+                </div>
+              </div>
+              <div class="venture-category">Digital Medicine</div>
+            </article>
+          </li>
+
+          <!-- Venture 4 (Offset down) -->
+          <li class="venture-card scroll-block" style="--stagger-index: 3;">
+            <article class="venture-article">
+              <figure role="img" class="liquid-figure liquid-aspect-16-11" data-max-scale="28">
+                <div class="liquid-placeholder-bg"></div>
+                <svg width="0" height="0" style="position:absolute;pointer-events:none;">
+                  <filter id="liquid-filter-v4">
+                    <feTurbulence id="turb-v4" type="fractalNoise" baseFrequency="0.009" numOctaves="2" result="noise"></feTurbulence>
+                    <feDisplacementMap id="disp-v4" in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+                  </filter>
+                </svg>
+                <img
+                  src="https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/ventures/venture-04.webp"
+                  alt="Vane Capital"
+                  loading="lazy"
+                  class="liquid-media-el"
+                  style="filter: url(#liquid-filter-v4);"
+                />
+                <div class="liquid-veil"></div>
+                <div class="liquid-glow"></div>
+                <div class="liquid-vignette"></div>
+              </figure>
+
+              <div class="venture-info-row">
+                <div>
+                  <h3 class="venture-name">Vane Capital</h3>
+                  <p class="venture-blurb">Backing the next generation of contrarian founders building hard, durable companies.</p>
+                </div>
+                <div class="venture-meta-right">
+                  <div class="venture-year">2008</div>
+                  <div class="venture-outcome">Active — $900M AUM</div>
+                </div>
+              </div>
+              <div class="venture-category">Venture Investing</div>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 7) Impact Section -->
+      <section id="impact" class="section-padded">
+        <!-- Header -->
+        <div class="impact-header">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>By The Numbers</span>
+          </div>
+          <h2 class="impact-title">
+            <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">Two decades,</span></span>
+            <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">measured.</span></span>
+          </h2>
+        </div>
+
+        <!-- 4-Stat Definition List -->
+        <dl class="impact-list">
+          <div class="impact-cell scroll-block" style="--stagger-index: 0;">
+            <dd class="impact-figure">4</dd>
+            <dt class="impact-label">Companies founded &amp; exited</dt>
+          </div>
+          <div class="impact-cell scroll-block" style="--stagger-index: 1;">
+            <dd class="impact-figure">$3.2B</dd>
+            <dt class="impact-label">Enterprise value created</dt>
+          </div>
+          <div class="impact-cell scroll-block" style="--stagger-index: 2;">
+            <dd class="impact-figure">120M+</dd>
+            <dt class="impact-label">People served by his products</dt>
+          </div>
+          <div class="impact-cell scroll-block" style="--stagger-index: 3;">
+            <dd class="impact-figure">2,400</dd>
+            <dt class="impact-label">Jobs created across ventures</dt>
+          </div>
+        </dl>
+      </section>
+
+      <!-- 8) Voices Section -->
+      <section id="voices" class="section-padded">
+        <div class="voices-header">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>Voices</span>
+          </div>
+          <h2 class="voices-title">
+            <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">What they say.</span></span>
+          </h2>
+        </div>
+
+        <div class="voices-body">
+          <!-- Selector List (5 cols on lg) -->
+          <div class="voices-selector">
+            <ul>
+              <li>
+                <button class="voice-tab is-active" data-voice-index="0" aria-label="Select Elena Cardoso">
+                  <span class="voice-tab-num">01</span>
+                  <div class="voice-tab-info">
+                    <span class="voice-tab-name">Elena Cardoso</span>
+                    <span class="voice-tab-role">Managing Partner, Meridian Ventures</span>
+                  </div>
+                  <span class="voice-tab-rule"></span>
+                </button>
+              </li>
+              <li>
+                <button class="voice-tab" data-voice-index="1" aria-label="Select David Okonkwo">
+                  <span class="voice-tab-num">02</span>
+                  <div class="voice-tab-info">
+                    <span class="voice-tab-name">David Okonkwo</span>
+                    <span class="voice-tab-role">Founder &amp; CEO, Cadence Health</span>
+                  </div>
+                  <span class="voice-tab-rule"></span>
+                </button>
+              </li>
+              <li>
+                <button class="voice-tab" data-voice-index="2" aria-label="Select Priya Nandakumar">
+                  <span class="voice-tab-num">03</span>
+                  <div class="voice-tab-info">
+                    <span class="voice-tab-name">Priya Nandakumar</span>
+                    <span class="voice-tab-role">CEO, Northwind Energy</span>
+                  </div>
+                  <span class="voice-tab-rule"></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Featured Panel (7 cols on lg) -->
+          <div class="voices-featured">
+            <div class="voice-quote-col">
+              <blockquote>
+                <p class="voice-quote-text" id="voice-quote-content"></p>
+                <footer class="voice-footer" id="voice-quote-footer"></footer>
+              </blockquote>
+            </div>
+
+            <!-- Portrait -->
+            <div class="voice-portrait-col">
+              <figure role="img" class="liquid-figure liquid-aspect-4-5 voice-portrait-figure scroll-block" id="voice-portrait-fig" data-max-scale="22">
+                <div class="liquid-placeholder-bg"></div>
+                <svg width="0" height="0" style="position:absolute;pointer-events:none;">
+                  <filter id="liquid-filter-voice">
+                    <feTurbulence id="turb-voice" type="fractalNoise" baseFrequency="0.009" numOctaves="2" result="noise"></feTurbulence>
+                    <feDisplacementMap id="disp-voice" in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+                  </filter>
+                </svg>
+                <img
+                  id="voice-portrait-img"
+                  src="https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/voices/voice-01.webp"
+                  alt="Featured testimonial"
+                  class="liquid-media-el"
+                  style="filter: url(#liquid-filter-voice);"
+                />
+                <div class="liquid-veil"></div>
+                <div class="liquid-glow"></div>
+                <div class="liquid-vignette"></div>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9) ContactFooter -->
+      <footer id="contact" class="contact-footer">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Let's Build</span>
+        </div>
+        <h2 class="contact-title">
+          <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">Have something</span></span>
+          <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">the world says</span></span>
+          <span class="line-reveal-wrap"><span class="line-reveal-inner scroll-line">can't be done?</span></span>
+        </h2>
+        <p class="contact-lead block-reveal scroll-block">
+          That's usually where I start. I read every message I'm sent.
+        </p>
+
+        <!-- Big Email Link -->
+        <div>
+          <a href="mailto:dxhieu97@gmail.com" class="contact-email-link" aria-label="Send email to dxhieu97@gmail.com">
+            <span>dxhieu97@gmail.com</span>
+            <span class="contact-email-arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="footer-bar">
+          <div class="footer-signature-col">
+            <p class="footer-signature">Marcus Vane</p>
+            <p class="footer-subtag">Designed &amp; built with conviction.</p>
+          </div>
+          <div class="footer-social-col">
+            <nav aria-label="Social">
+              <ul class="footer-social-links">
+                <li>
+                  <a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" class="footer-social-link">
+                    <span class="social-accent-rule"></span>
+                    <span>LinkedIn</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com" target="_blank" rel="noreferrer noopener" class="footer-social-link">
+                    <span class="social-accent-rule"></span>
+                    <span>X / Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://substack.com" target="_blank" rel="noreferrer noopener" class="footer-social-link">
+                    <span class="social-accent-rule"></span>
+                    <span>Substack</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-copy-col">
+            <p class="footer-copy">© 2026 Marcus Vane. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Main Logic Script: Pure Vanilla ES Module + Lenis -->
+    <script type="module">
+      import Lenis from "lenis";
+
+      // 1. Rem-based Adaptive Grid calculation
+      const FONT_BASE = 16, BASE_W = 1920, COEF = 0.6666;
+      function applyAdaptiveGrid() {
+        const w = window.innerWidth;
+        const reduction = ((BASE_W - w) / BASE_W) * 100 * COEF;
+        const size = FONT_BASE - (FONT_BASE * reduction) / 100;
+        if (size > FONT_BASE) {
+          document.documentElement.style.fontSize = size + "px";
+        } else {
+          document.documentElement.style.removeProperty("font-size");
+        }
+      }
+      applyAdaptiveGrid();
+      window.addEventListener("resize", applyAdaptiveGrid);
+
+      // 2. Lenis Smooth Scroll Setup
+      let lenis;
+      try {
+        lenis = new Lenis({
+          smoothWheel: true,
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+        window.lenis = lenis;
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      } catch (err) {
+        console.warn("Lenis initialization skipped:", err);
+      }
+
+      // Smooth anchor scrolling via Lenis
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+          const href = anchor.getAttribute("href");
+          if (!href || href === "#") return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            if (lenis) {
+              lenis.scrollTo(target, { offset: 0, duration: 1.4 });
+            } else {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        });
+      });
+
+      // 3. Preloader & Initial Scroll Lock
+      const preloader = document.getElementById("preloader");
+      const preloaderNum = document.getElementById("preloader-num");
+      const preloaderBrand = document.getElementById("preloader-brand");
+      const preloaderCounter = document.getElementById("preloader-counter");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (lenis) lenis.stop();
+      window.scrollTo(0, 0);
+      document.body.classList.add("preloader-locked");
+
+      function finishPreloader() {
+        if (preloader) {
+          preloader.style.pointerEvents = "none";
+          preloader.setAttribute("aria-hidden", "true");
+        }
+        document.body.classList.remove("preloader-locked");
+        if (lenis) lenis.start();
+      }
+
+      if (prefersReducedMotion) {
+        if (preloader) preloader.style.display = "none";
+        finishPreloader();
+        triggerHeroRevealImmediate();
+      } else {
+        // Count 0 -> 100 over 2000ms
+        const countDuration = 2000;
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / countDuration, 1);
+          // subtle ease out
+          const count = Math.floor(progress * 100);
+          if (preloaderNum) preloaderNum.textContent = count;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            if (preloaderNum) preloaderNum.textContent = "100";
+            onCounterComplete();
+          }
+        }
+        requestAnimationFrame(updateCounter);
+
+        function onCounterComplete() {
+          // Fade labels out over 300ms
+          if (preloaderBrand) preloaderBrand.style.opacity = "0";
+          if (preloaderCounter) preloaderCounter.style.opacity = "0";
+
+          // After 200ms delay, wipe preloader upward
+          setTimeout(() => {
+            if (preloader) {
+              preloader.style.transform = "translateY(-100%)";
+            }
+            // Wipe duration: 650ms
+            setTimeout(() => {
+              finishPreloader();
+            }, 650);
+          }, 200);
+        }
+      }
+
+      // 4. Hero Sequence Trigger
+      // REVEAL_DELAY: 2500ms after load
+      function triggerHeroReveal() {
+        const nameCharsL1 = document.querySelectorAll("#hero-name-line-1 .hero-char");
+        const nameCharsL2 = document.querySelectorAll("#hero-name-line-2 .hero-char");
+        const roleInners = document.querySelectorAll(".hero-role-inner");
+        const heroRoles = document.getElementById("hero-roles");
+        const heroDesc = document.getElementById("hero-desc");
+        const scrollCue = document.getElementById("hero-scroll-cue");
+
+        // Line 1: 2500ms baseline, 52ms stagger
+        nameCharsL1.forEach((char, i) => {
+          setTimeout(() => {
+            char.classList.add("is-revealed");
+          }, 2500 + i * 52);
+        });
+
+        // Line 2: starts at 2740ms (2500 + 240ms), 52ms stagger
+        nameCharsL2.forEach((char, i) => {
+          setTimeout(() => {
+            char.classList.add("is-revealed");
+          }, 2740 + i * 52);
+        });
+
+        // Roles: 2700ms + i * 80ms
+        if (heroRoles) {
+          roleInners.forEach((role, i) => {
+            setTimeout(() => {
+              role.style.transform = "translateY(0)";
+              role.style.opacity = "1";
+            }, 2700 + i * 80);
+          });
+        }
+
+        // Description: 2900ms
+        setTimeout(() => {
+          if (heroDesc) heroDesc.classList.add("is-revealed");
+        }, 2900);
+
+        // Scroll cue: 3400ms
+        setTimeout(() => {
+          if (scrollCue) scrollCue.classList.add("is-revealed");
+        }, 3400);
+      }
+
+      function triggerHeroRevealImmediate() {
+        document.querySelectorAll(".hero-char").forEach(c => c.classList.add("is-revealed"));
+        document.querySelectorAll(".hero-role-inner").forEach(r => {
+          r.style.transform = "translateY(0)";
+          r.style.opacity = "1";
+        });
+        const heroDesc = document.getElementById("hero-desc");
+        const scrollCue = document.getElementById("hero-scroll-cue");
+        if (heroDesc) heroDesc.classList.add("is-revealed");
+        if (scrollCue) scrollCue.classList.add("is-revealed");
+      }
+
+      if (!prefersReducedMotion) {
+        triggerHeroReveal();
+      }
+
+      // 5. Mobile Menu Toggle & Stagger Slide
+      const burgerBtn = document.getElementById("burger-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-menu-link");
+
+      let menuOpen = false;
+      burgerBtn.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        burgerBtn.classList.toggle("is-active", menuOpen);
+        burgerBtn.setAttribute("aria-expanded", String(menuOpen));
+        mobileMenu.classList.toggle("is-open", menuOpen);
+        mobileMenu.setAttribute("aria-hidden", String(!menuOpen));
+
+        if (menuOpen) {
+          if (lenis) lenis.stop();
+          mobileLinks.forEach((link, i) => {
+            link.style.transitionDelay = `${120 + i * 60}ms`;
+          });
+        } else {
+          if (lenis) lenis.start();
+          mobileLinks.forEach((link) => {
+            link.style.transitionDelay = "0ms";
+          });
+        }
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuOpen = false;
+          burgerBtn.classList.remove("is-active");
+          burgerBtn.setAttribute("aria-expanded", "false");
+          mobileMenu.classList.remove("is-open");
+          mobileMenu.setAttribute("aria-hidden", "true");
+          if (lenis) lenis.start();
+        });
+      });
+
+      // 6. IntersectionObserver for Scroll Reveals (Story, Ventures, Impact, Voices, Contact)
+      const observerOptions = {
+        threshold: 0,
+        rootMargin: "0px 0px 50px 0px"
+      };
+
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const staggerIndex = el.style.getPropertyValue("--stagger-index");
+            const delay = staggerIndex ? parseInt(staggerIndex, 10) * 90 : 0;
+
+            setTimeout(() => {
+              el.classList.add("in-view");
+            }, delay);
+
+            observer.unobserve(el);
+          }
+        });
+      }, observerOptions);
+
+      // Line reveals in section headings
+      document.querySelectorAll(".scroll-line").forEach((line, index) => {
+        const lineObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                line.classList.add("is-revealed");
+              }, (index % 3) * 90);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        lineObserver.observe(line);
+      });
+
+      // Block reveals
+      document.querySelectorAll(".scroll-block").forEach((block) => {
+        scrollObserver.observe(block);
+      });
+
+      // 7. Voices Interactive Testimonials Component
+      const voicesData = [
+        {
+          quote: "Marcus saw the market three years before the rest of us. Betting alongside him changed the trajectory of my entire career.",
+          name: "Elena Cardoso",
+          role: "Managing Partner, Meridian Ventures",
+          img: "https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/voices/voice-01.webp"
+        },
+        {
+          quote: "He doesn't just write checks — he gets in the trenches at 6am and refuses to leave until the impossible part is solved.",
+          name: "David Okonkwo",
+          role: "Founder & CEO, Cadence Health",
+          img: "https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/voices/voice-02.webp"
+        },
+        {
+          quote: "The most demanding mentor I've ever had, and the only reason our company survived its first winter. Relentless, generous, right.",
+          name: "Priya Nandakumar",
+          role: "CEO, Northwind Energy",
+          img: "https://api.getlayers.ai/storage/v1/object/public/public/assets/marcus-vane-6799bd1fb6/voices/voice-03.webp"
+        }
+      ];
+
+      const voiceTabs = document.querySelectorAll(".voice-tab");
+      const voiceQuoteContent = document.getElementById("voice-quote-content");
+      const voiceQuoteFooter = document.getElementById("voice-quote-footer");
+      const voicePortraitImg = document.getElementById("voice-portrait-img");
+      let currentVoiceIndex = -1;
+
+      function renderVoice(index) {
+        if (index === currentVoiceIndex) return;
+        currentVoiceIndex = index;
+        const voice = voicesData[index];
+
+        // Update tabs active class
+        voiceTabs.forEach((tab, i) => {
+          tab.classList.toggle("is-active", i === index);
+        });
+
+        // Split quote into words for animated reveal
+        const words = voice.quote.split(/\s+/);
+        voiceQuoteContent.innerHTML = `“${words.map(w => `<span class="voice-word">${w}</span>`).join(" ")}”`;
+        voiceQuoteFooter.textContent = `${voice.name} — ${voice.role}`;
+
+        // Swap portrait image
+        if (voicePortraitImg) {
+          voicePortraitImg.src = voice.img;
+          voicePortraitImg.alt = voice.name;
+        }
+
+        // Animate words upward: y:18->0, stagger 22ms, 520ms easeOutQuart
+        const wordEls = voiceQuoteContent.querySelectorAll(".voice-word");
+        wordEls.forEach((wordEl, i) => {
+          setTimeout(() => {
+            wordEl.classList.add("is-revealed");
+          }, i * 22);
+        });
+      }
+
+      voiceTabs.forEach((tab) => {
+        const idx = parseInt(tab.getAttribute("data-voice-index"), 10);
+        tab.addEventListener("click", () => renderVoice(idx));
+        tab.addEventListener("mouseenter", () => renderVoice(idx));
+        tab.addEventListener("focus", () => renderVoice(idx));
+      });
+
+      // Initial voice render
+      renderVoice(0);
+
+      // 8. LiquidImage Fluid Distortion Engine (Imperative Spring Physics)
+      // Only active on desktop (>768px) and non-touch devices
+      const isDesktop = window.innerWidth > 768 && !('ontouchstart' in window);
+
+      if (isDesktop && !prefersReducedMotion) {
+        const liquidFigures = document.querySelectorAll(".liquid-figure");
+
+        liquidFigures.forEach((figure) => {
+          const maxScale = parseFloat(figure.getAttribute("data-max-scale") || "28");
+          const turb = figure.querySelector("feTurbulence");
+          const disp = figure.querySelector("feDisplacementMap");
+
+          if (!turb || !disp) return;
+
+          let targetScale = 1;
+          let currentScale = 1;
+          let scaleVelocity = 0;
+
+          let targetFreq = 0.009;
+          let currentFreq = 0.009;
+          let freqVelocity = 0;
+
+          let isHovered = false;
+          let animationFrameId = null;
+
+          function step() {
+            // Spring configuration: tension 140, friction 13
+            // Fluid loose wobble
+            const tension = 0.14;
+            const friction = 0.82;
+
+            // Scale physics
+            const scaleForce = (targetScale - currentScale) * tension;
+            scaleVelocity = (scaleVelocity + scaleForce) * friction;
+            currentScale += scaleVelocity;
+
+            // Frequency physics
+            const freqForce = (targetFreq - currentFreq) * tension;
+            freqVelocity = (freqVelocity + freqForce) * friction;
+            currentFreq += freqVelocity;
+
+            disp.setAttribute("scale", currentScale.toFixed(2));
+            turb.setAttribute("baseFrequency", currentFreq.toFixed(4));
+
+            const isResting =
+              Math.abs(targetScale - currentScale) < 0.05 &&
+              Math.abs(scaleVelocity) < 0.05 &&
+              Math.abs(targetFreq - currentFreq) < 0.0001 &&
+              Math.abs(freqVelocity) < 0.0001;
+
+            if (!isResting || isHovered) {
+              animationFrameId = requestAnimationFrame(step);
+            } else {
+              disp.setAttribute("scale", targetScale.toFixed(2));
+              turb.setAttribute("baseFrequency", targetFreq.toFixed(4));
+              animationFrameId = null;
+            }
+          }
+
+          figure.addEventListener("mouseenter", () => {
+            isHovered = true;
+            targetScale = maxScale;
+            targetFreq = 0.022;
+            if (!animationFrameId) {
+              animationFrameId = requestAnimationFrame(step);
+            }
+          });
+
+          figure.addEventListener("mouseleave", () => {
+            isHovered = false;
+            targetScale = 1;
+            targetFreq = 0.009;
+            if (!animationFrameId) {
+              animationFrameId = requestAnimationFrame(step);
+            }
+          });
+        });
+      }
+
+      // 9. Hero Video Autoplay Assurance
+      (function initHeroVideo() {
+        const video = document.getElementById("hero-portrait-video");
+        if (!video) return;
+
+        // Try playing immediately
+        const tryPlay = () => {
+          video.play().catch(() => {
+            // If browser blocks autoplay, start on first user interaction
+            const unlock = () => {
+              video.play().catch(() => {});
+              window.removeEventListener("click", unlock);
+              window.removeEventListener("touchstart", unlock);
+              window.removeEventListener("scroll", unlock);
+            };
+            window.addEventListener("click", unlock, { passive: true });
+            window.addEventListener("touchstart", unlock, { passive: true });
+            window.addEventListener("scroll", unlock, { passive: true });
+          });
+        };
+
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+          tryPlay();
+        } else {
+          document.addEventListener("DOMContentLoaded", tryPlay);
+        }
+      })();
+    </script>
+  </body>
+</html>
